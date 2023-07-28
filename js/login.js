@@ -69,7 +69,7 @@ loginBtn.addEventListener("click", function(){
         if (userEmailInput.value.toLowerCase() == listOfUsers[i].userEmail.toLowerCase() && userPassInput.value == listOfUsers[i].userPassword) {
             localStorage.setItem("loggedinUser", `Welcome ${listOfUsers[i].userName}`)
             clearLoginInputs();
-            window.location.href = window.location.origin + "/home.html";  
+            window.location.href = window.location.origin + "/html/home.html";  
 
             return 0;
         }
