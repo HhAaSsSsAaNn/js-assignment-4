@@ -69,7 +69,7 @@ loginBtn.addEventListener("click", function(){
         if (userEmailInput.value.toLowerCase() == listOfUsers[i].userEmail.toLowerCase() && userPassInput.value == listOfUsers[i].userPassword) {
             localStorage.setItem("loggedinUser", `Welcome ${listOfUsers[i].userName}`)
             clearLoginInputs();
-            window.location.href = window.location.origin + "/html/home.html";  
+            window.location.href = window.location.origin + "/home.html";  
 
             return 0;
         }
@@ -82,6 +82,7 @@ regBtn.addEventListener("click", function(){
     if (!checkLoginValidation()) {
         messageSpan.innerHTML = "All inputs are required and should be valid!"
         messageSpan.classList.replace("text-success", "text-danger")
+        showSigninForm();
     }
     else{
         let userObj ={
