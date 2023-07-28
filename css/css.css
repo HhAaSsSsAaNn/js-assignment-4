@@ -1,0 +1,62 @@
+:root {
+    --orangred: orangered;
+  }
+
+body{
+    background-color: antiquewhite ;
+    font-family: Pacifico, cursive;
+}
+.header h1{
+    font-size: 3.3rem;
+    font-weight: bold;
+}
+.header .hover{
+    background-color: rgb(254, 194, 96);
+    z-index: -1 !important;
+    transition: 0.5s;
+    top: 75% !important;
+    width: 23%;
+}
+
+.header:hover .hover{
+    top: 65% !important;
+    padding-top: 30px !important;
+    
+}
+.dot-border{
+    border-top: 2px dotted black;
+    border-bottom: 2px dotted black;
+}
+
+label{
+    color: orangered;
+    font-size: 1.2rem;
+}
+.btn-orange{
+    background-color: orangered  !important;
+}
+.text-Orangered{
+    color: orangered;
+}
+
+#changeFormType:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.btn-outline-orangred{
+    --bs-btn-color: var(--orangred);
+    --bs-btn-border-color: var(--orangred);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--orangred);
+    --bs-btn-hover-border-color: var(--orangred);
+    --bs-btn-focus-shadow-rgb: 220,53,69;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--orangred);
+    --bs-btn-active-border-color: var(--orangred);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--orangred);
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--orangred);
+    --bs-gradient: none;
+}
