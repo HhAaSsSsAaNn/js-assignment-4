@@ -1,4 +1,3 @@
-let mainSection = document.getElementById("logedin");
 let loginSection = document.getElementById("login-register");
 let userNameInput = document.getElementById("name");
 let userEmailInput = document.getElementById("email");
@@ -9,16 +8,15 @@ let messageSpan = document.getElementById("message");
 let regBtn = document.getElementById("register-btn");
 let haveAccountP = document.getElementById("haveAccount");
 let changeFormTypeA = document.getElementById("changeFormType");
-let welcomeUser = document.getElementById("welcome");
-let logoutBtn = document.getElementById("logout");
+
 
 const emailPattern = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
 
 let listOfUsers = localStorage.getItem("ourUsers") == null ? [] : 
 JSON.parse(localStorage.getItem("ourUsers"));
 
-mainSection.style.display = 'none';
 emailValidationSpan.style.display = 'none';
+
 showSigninForm();
 function showSigninForm(){
     regBtn.style.display = 'none';
@@ -69,10 +67,10 @@ function checkLoginValidation() {
 loginBtn.addEventListener("click", function(){
     for (let i = 0; i < listOfUsers.length; i++) {
         if (userEmailInput.value.toLowerCase() == listOfUsers[i].userEmail.toLowerCase() && userPassInput.value == listOfUsers[i].userPassword) {
-            loginSection.style.display = 'none';
-            mainSection.style.display = 'block';
-            welcomeUser.innerHTML = `Welcome ${listOfUsers[i].userName}`;
-            clearInputs();
+            localStorage.setItem("loggedinUser", `Welcome ${listOfUsers[i].userName}`)
+            clearLoginInputs();
+            window.location.href = window.location.origin + "/html/home.html";  
+
             return 0;
         }
      }
@@ -98,11 +96,6 @@ regBtn.addEventListener("click", function(){
         messageSpan.classList.replace("text-danger", "text-success")
     }
     
-})
-
-logoutBtn.addEventListener("click", function(){
-    loginSection.style.display = 'block';
-    mainSection.style.display = 'none';
 })
 
 function saveUser(){

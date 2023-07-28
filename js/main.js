@@ -12,6 +12,16 @@ updateBtn.style.display = 'none';
 urlvalidSpan.style.display = 'none';
 siteNamevalidSpan.style.display = 'none';
 
+//================== login project ==========================
+let welcomeUser = document.getElementById("welcome");
+let logoutBtn = document.getElementById("logout");
+
+welcomeUser.innerHTML = localStorage.getItem("loggedinUser");
+logoutBtn.addEventListener("click", function(){
+    localStorage.setItem("loggedinUser", "");
+    window.location.href = window.location.origin + "/index.html"
+})
+
 const urlPattern = RegExp('^(https?:\\/\\/)?'+ // validate protocol
 '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
 '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
